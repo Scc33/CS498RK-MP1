@@ -438,15 +438,15 @@
         <div id="photoHighlights">
           <h2>Photo Highlights</h2>
           <div class="slideshow-container">
-            <div class="container">
+            <div class="photoContainer">
               <img src="assets/image1.jpg" style="width:100%">
               <div class="caption">The United States 4x100 Medley relay collect Gold and a WR.</div>
             </div>
-            <div class="container">
+            <div class="photoContainer">
               <img src="assets/image2.jpg" style="width:100%">
               <div class="caption">Ahmed Hafnaoui snags Gold for Tunisia in an outside smoke.</div>
             </div>
-            <div class="container">
+            <div class="photoContainer">
               <img src="assets/image3.jpg" style="width:100%">
               <div class="caption">China's 4x200 Free relay upsets the Americans and Australians for Gold and a WR.</div>
             </div>
@@ -456,7 +456,21 @@
         </div>
         <div id="videoHighlights">
           <h2>Video Highlights</h2>
+          <div class="slideshow-container">
+            <div class="videoContainer">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/yxkPEFKoe80" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="videoContainer">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/puSeavDVO0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="videoContainer">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/BZCBpqND4gM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <a class="back" onclick="videoPlusSlides(-1)">&#10094;</a>
+            <a class="forward" onclick="videoPlusSlides(1)">&#10095;</a>
+          </div>
         </div>
+        <button>Scroll to top</button>
         <footer>
           Made by Sean Coughlin
           Data from <a href="https://en.wikipedia.org/wiki/Swimming_at_the_2020_Summer_Olympics">wikipedia</a>
