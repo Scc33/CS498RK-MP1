@@ -7,7 +7,7 @@ function plusSlides(n) {
   SlideShow(slidePosition += n);
 }
 
-function SlideShow(n) {
+function SlideShow(n,type) {
   var i;
   var slides = document.getElementsByClassName("photoContainer");
   console.log(slides);
