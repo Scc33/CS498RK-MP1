@@ -9,7 +9,7 @@ function plusSlides(n) {
 
 function SlideShow(n,type) {
   var i;
-  var slides = document.getElementsByClassName("photoContainer");
+  var slides = document.getElementsByClassName("container");
   console.log(slides);
   console.log(slidePosition);
   if (n > slides.length) {slidePosition = 1}
@@ -19,28 +19,6 @@ function SlideShow(n,type) {
   }
 
   slides[slidePosition-1].style.display = "block";
-}
-
-var videoSlidePosition = 1;
-VideoSlideShow(videoSlidePosition);
-
-// forward/Back controls
-function videoPlusSlides(n) {
-  console.log(videoSlidePosition);
-  VideoSlideShow(videoSlidePosition += n);
-}
-
-function VideoSlideShow(n) {
-  var i;
-  var slides = document.getElementsByClassName("videoContainer");
-  console.log(slides);
-  if (n > slides.length) {videoSlidePosition = 1}
-  if (n < 1) {videoSlidePosition = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-
-  slides[videoSlidePosition-1].style.display = "block";
 }
 
 // When the user scrolls the page, execute myFunction
