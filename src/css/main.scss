@@ -96,10 +96,16 @@ html {
 
 .modal-content {
   background-color: #fefefe;
+  text-align: center;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .close {
