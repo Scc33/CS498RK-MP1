@@ -73,6 +73,30 @@ html {
   flex-direction: column;
 }
 
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.sub-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.first {
+  background: #FFD700;
+}
+
+.second {
+  background: #C0C0C0;
+}
+
+.third {
+  background: #CD7F32;
+}
+
 .one {
   background-color: #26abff
 }
