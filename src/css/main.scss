@@ -2,6 +2,30 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes slideinright {
+  from {
+    margin-right: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-right: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slideinleft {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
 #navbar {
   overflow: hidden;
   background-color: #333;
@@ -17,6 +41,16 @@ html {
   scroll-behavior: smooth;
 }
 
+.home-right {
+  animation: slideinright;
+  animation-duration: 2s;
+}
+
+.home-left {
+  animation-name: slideinleft;
+  animation-duration: 2s;
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -27,6 +61,8 @@ html {
   max-width: 1000px;
   position: relative;
   margin: auto;
+  animation: slideinleft;
+  animation-delay: 2s;
 }
 
 .back, .forward {
@@ -77,6 +113,8 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  animation: slideinright;
+  animation-duration: 2s;
 }
 
 .sub-item {
