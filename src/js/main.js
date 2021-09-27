@@ -1,21 +1,3 @@
-$(window).on("scroll", function() {
-
-        var currentPos = $(window).scrollTop();
-
-        $('.navbar a').each(function() {
-            var sectionLink = $(this);
-            var section = $(sectionLink.attr('href'));
-            if(section.position().top <= currentPos && sectionLink.offset().top + section.height() >= currentPos) {
-                $('.navbar a').removeClass('active');
-                sectionLink.parent().addClass('active');
-            }
-            else {
-                sectionLink.parent().removeClass('active');
-            }
-        });
-
-    });
-
 var slidePosition = 1;
 SlideShow(slidePosition);
 

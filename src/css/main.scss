@@ -57,6 +57,22 @@ html {
   width: 100%;
 }
 
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 25px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 5px 5px;
+}
+
+.styled-table tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
 .slideshow-container {
   max-width: 1000px;
   position: relative;
@@ -124,15 +140,15 @@ html {
 }
 
 .first {
-  background: #FFD700;
+  background-color: #FFD700 !important;
 }
 
 .second {
-  background: #C0C0C0;
+  background-color: #C0C0C0 !important;
 }
 
 .third {
-  background: #CD7F32;
+  background-color: #CD7F32 !important;
 }
 
 .one {
