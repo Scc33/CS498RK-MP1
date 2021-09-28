@@ -1,6 +1,7 @@
-html {
+html,body {
   scroll-behavior: smooth;
   background-color: #59bfff;
+  margin: 0;
 }
 
 @keyframes slideinright {
@@ -146,7 +147,10 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.white {
+  background-color: white;
 }
 
 .item {
