@@ -52,14 +52,26 @@ html {
   color: white;
 }
 
-.home-right {
-  animation: slideinright;
-  animation-duration: 3s;
+.home-text {
+  color: white;
+  opacity: 100%;
+}
+
+.home-text p {
+  font-size: 36px;
 }
 
 .home-left {
   animation-name: slideinleft;
   animation-duration: 3s;
+  background-image: url('../assets/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 500px;
+  opacity: 50%;
+  text-align: center;
 }
 
 .padded-text {
