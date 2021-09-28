@@ -1,7 +1,6 @@
 var slidePosition = 1;
 SlideShow(slidePosition);
 
-// forward/Back controls
 function plusSlides(n) {
   console.log(slidePosition)
   SlideShow(slidePosition += n);
@@ -21,21 +20,15 @@ function SlideShow(n,type) {
   slides[slidePosition-1].style.display = "block";
 }
 
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {navScrollFunction()};
 
-// Get the navbar
 var navbar = document.getElementById("navbar");
 
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
+function navScrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "5px 5px";
   } else {
-    navbar.classList.remove("sticky");
+    document.getElementById("navbar").style.padding = "20px 10px";
   }
 }
 

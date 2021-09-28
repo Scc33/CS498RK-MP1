@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  background-color: #59bfff
+  background-color: #59bfff;
 }
 
 @keyframes slideinright {
@@ -27,29 +27,31 @@ html {
   }
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
 #navbar {
   overflow: hidden;
-  background-color: #cbcba9;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
 }
 
 #navbar a {
   float: left;
-  display: block;
   color: black;
   text-align: center;
-  padding: 14px;
+  padding: 12px;
   text-decoration: none;
-  scroll-behavior: smooth;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
 }
 
 #navbar a:hover {
-  color: white;
+  background-color: #ddd;
+  color: black;
 }
 
 .home-text {
@@ -57,16 +59,13 @@ html {
   opacity: 100%;
 }
 
-.home-text p {
-  font-size: 36px;
-}
-
 .home-left {
-  animation-name: slideinleft;
+  animation-name: slideinright;
   animation-duration: 3s;
   background-image: url('../assets/background.jpg');
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   position: relative;
   height: 500px;
@@ -100,7 +99,8 @@ html {
   margin: auto;
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.15);
   animation: slideinleft;
-  animation-delay: 2s;
+  transition: 1s;
+  padding-bottom: 20px;
 }
 
 .back, .forward {
@@ -145,6 +145,7 @@ html {
 .section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -167,15 +168,15 @@ html {
 }
 
 .first {
-  background-color: #FFD700 !important;
+  background-color: #FFD700;
 }
 
 .second {
-  background-color: #C0C0C0 !important;
+  background-color: #C0C0C0;
 }
 
 .third {
-  background-color: #CD7F32 !important;
+  background-color: #CD7F32;
 }
 
 .modal {
@@ -187,6 +188,7 @@ html {
   width: 100%;
   height: 100%;
   overflow: auto;
+  transition: 1s;
 }
 
 h2 {
@@ -205,7 +207,7 @@ button {
 }
 
 button:hover {
-  background-color: #4CAF50;
+  background-color: #000000;
   color: white;
 }
 
@@ -216,9 +218,16 @@ button:hover {
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
+  transition: 1s;
 }
 
 .center {
+  text-align: center;
+  animation: slideinleft;
+  animation-duration: 3s;
+}
+
+.center-table {
   margin-left: auto;
   margin-right: auto;
 }
