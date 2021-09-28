@@ -27,8 +27,10 @@ var navbar = document.getElementById("navbar");
 function navScrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     document.getElementById("navbar").style.padding = "5px 5px";
+    document.getElementById("navbar").style.fontSize = "16px";
   } else {
     document.getElementById("navbar").style.padding = "20px 10px";
+    document.getElementById("navbar").style.fontSize = "25px";
   }
 }
 
