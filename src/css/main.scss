@@ -23,6 +23,7 @@ html,body {
 }
 
 .rings {
+  transition: $partial-transition;
   padding-right: 15px;
 }
 

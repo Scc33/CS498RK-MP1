@@ -11,7 +11,7 @@ function SlideShow(n,type) {
   if (n > slides.length) {slidePosition = 1}
   if (n < 1) {slidePosition = slides.length}
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    slides[i].style.display = "none";
   }
 
   slides[slidePosition-1].style.display = "block";
@@ -22,9 +22,11 @@ window.onscroll = () => {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     navbar.style.padding = "5px 5px";
     navbar.style.fontSize = "16px";
+    document.getElementsByClassName("rings")[0].setAttribute('hidden', true);
   } else {
     navbar.style.padding = "20px 10px";
     navbar.style.fontSize = "25px";
+    document.getElementsByClassName("rings")[0].removeAttribute('hidden');
   }
   sections = ["anchor-home","anchor-events","anchor-medals","anchor-records","anchor-highlights"];
   var i;
@@ -34,9 +36,9 @@ window.onscroll = () => {
     var boundingRect = section.getBoundingClientRect();
     var currentPos = document.body.scrollTop;
     if (boundingRect.y  <= currentPos && boundingRect.y + boundingRect.height > currentPos) {
-        sectionAnchor.classList.add('active');
+      sectionAnchor.classList.add('active');
     } else {
-        sectionAnchor.classList.remove('active');
+      sectionAnchor.classList.remove('active');
     }
   }
 };
@@ -53,20 +55,6 @@ window.onclick = (event) => {
   }
   if (event.target == modalMixed) {
     modalMixed.style.display = "none";
-  }
-  var i;
-  sections = ["anchor-home","anchor-events","anchor-medals","anchor-records","anchor-highlights","anchor-top"];
-  for (i = 0; i < sections.length; i++) {
-    var sectionAnchor = document.getElementById(sections[i]);
-    if (event.target == sectionAnchor) {
-      var section = document.getElementById(sections[i].substring(7,));
-      var boundingRect = section.getBoundingClientRect();
-      console.log(sections[i], boundingRect.y);
-      window.scroll({
-          top: boundingRect.y,
-          behavior: 'smooth' // does not work on Safari
-      });
-    }
   }
 }
 
