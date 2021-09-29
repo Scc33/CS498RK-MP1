@@ -51,12 +51,11 @@ html,body {
 
   a:hover {
     background-color: #ddd;
-    color: black;
   }
 }
 
 .active {
-  text-decoration: underline;
+  background-color: $bg-color;
 }
 
 .home-left {

@@ -28,22 +28,18 @@ function navScrollFunction() {
     navbar.style.padding = "20px 10px";
     navbar.style.fontSize = "25px";
   }
-  sections = document.getElementsByClassName('nav');
-  console.log(sections)
-
+  sections = ["anchor-home","anchor-events","anchor-medals","anchor-records","anchor-highlights"];
   var i;
   for (i = 0; i < sections.length; i++) {
-    var sectionLink = sections[i].attributes.href.nodeValue;
-    console.log(sectionLink.substring(1,))
-    var section = document.getElementById(sectionLink.substring(1,));
+    var sectionAnchor = document.getElementById(sections[i]);
+    var section = document.getElementById(sections[i].substring(7,));
     var boundingRect = section.getBoundingClientRect();
-    console.log(boundingRect);
     var currentPos = document.body.scrollTop;
-    if(boundingRect.y <= currentPos && boundingRect.y + boundingRect.height > currentPos) {
-        //section.parent().addClass('active');
+    if (boundingRect.y  <= currentPos && boundingRect.y + boundingRect.height > currentPos) {
+        sectionAnchor.classList.add('active');
     }
     else {
-        //sectionLink.parent().removeClass('active');
+        sectionAnchor.classList.remove('active');
     }
   }
 }
