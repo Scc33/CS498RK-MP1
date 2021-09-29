@@ -2,15 +2,12 @@ var slidePosition = 1;
 SlideShow(slidePosition);
 
 function plusSlides(n) {
-  console.log(slidePosition)
   SlideShow(slidePosition += n);
 }
 
 function SlideShow(n,type) {
   var i;
-  var slides = document.getElementsByClassName("container");
-  console.log(slides);
-  console.log(slidePosition);
+  let slides = document.getElementsByClassName("container");
   if (n > slides.length) {slidePosition = 1}
   if (n < 1) {slidePosition = slides.length}
   for (i = 0; i < slides.length; i++) {
@@ -20,24 +17,41 @@ function SlideShow(n,type) {
   slides[slidePosition-1].style.display = "block";
 }
 
-window.onscroll = function() {navScrollFunction()};
-
-var navbar = document.getElementById("navbar");
+window.onscroll = () => { navScrollFunction() };
 
 function navScrollFunction() {
+  let navbar = document.getElementById("navbar");
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("navbar").style.padding = "5px 5px";
-    document.getElementById("navbar").style.fontSize = "16px";
+    navbar.style.padding = "5px 5px";
+    navbar.style.fontSize = "16px";
   } else {
-    document.getElementById("navbar").style.padding = "20px 10px";
-    document.getElementById("navbar").style.fontSize = "25px";
+    navbar.style.padding = "20px 10px";
+    navbar.style.fontSize = "25px";
+  }
+  sections = document.getElementsByClassName('nav');
+  console.log(sections)
+
+  var i;
+  for (i = 0; i < sections.length; i++) {
+    var sectionLink = sections[i].attributes.href.nodeValue;
+    console.log(sectionLink.substring(1,))
+    var section = document.getElementById(sectionLink.substring(1,));
+    var boundingRect = section.getBoundingClientRect();
+    console.log(boundingRect);
+    var currentPos = document.body.scrollTop;
+    if(boundingRect.y <= currentPos && boundingRect.y + boundingRect.height > currentPos) {
+        //section.parent().addClass('active');
+    }
+    else {
+        //sectionLink.parent().removeClass('active');
+    }
   }
 }
 
-var modalMen = document.getElementById("menModal");
-var modalWomen = document.getElementById("womenModal");
-var modalMixed = document.getElementById("mixedModal");
-window.onclick = function(event) {
+let modalMen = document.getElementById("menModal");
+let modalWomen = document.getElementById("womenModal");
+let modalMixed = document.getElementById("mixedModal");
+window.onclick = (event) => {
   if (event.target == modalMen) {
     modalMen.style.display = "none";
   }
@@ -49,32 +63,32 @@ window.onclick = function(event) {
   }
 }
 
-var btnMen = document.getElementById("mens");
-btnMen.onclick = function() {
+let btnMen = document.getElementById("mens");
+btnMen.onclick = () => {
   modalMen.style.display = "block";
 }
 
-var spanMen = document.getElementById("closeMen");
-spanMen.onclick = function() {
+let spanMen = document.getElementById("closeMen");
+spanMen.onclick = () => {
   modalMen.style.display = "none";
 }
 
-var btnWomen = document.getElementById("womens");
-btnWomen.onclick = function() {
+let btnWomen = document.getElementById("womens");
+btnWomen.onclick = () => {
   modalWomen.style.display = "block";
 }
 
-var spanWomen = document.getElementById("closeWomen");
-spanWomen.onclick = function() {
+let spanWomen = document.getElementById("closeWomen");
+spanWomen.onclick = () => {
   modalWomen.style.display = "none";
 }
 
-var btnMixed = document.getElementById("mixed");
-btnMixed.onclick = function() {
+let btnMixed = document.getElementById("mixed");
+btnMixed.onclick = () => {
   modalMixed.style.display = "block";
 }
 
-var closeMixed = document.getElementById("closeMixed");
-closeMixed.onclick = function() {
+let closeMixed = document.getElementById("closeMixed");
+closeMixed.onclick = () => {
   modalMixed.style.display = "none";
 }
