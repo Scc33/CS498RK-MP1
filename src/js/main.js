@@ -17,9 +17,7 @@ function SlideShow(n,type) {
   slides[slidePosition-1].style.display = "block";
 }
 
-window.onscroll = () => { navScrollFunction() };
-
-function navScrollFunction() {
+window.onscroll = () => {
   let navbar = document.getElementById("navbar");
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     navbar.style.padding = "5px 5px";
@@ -37,12 +35,11 @@ function navScrollFunction() {
     var currentPos = document.body.scrollTop;
     if (boundingRect.y  <= currentPos && boundingRect.y + boundingRect.height > currentPos) {
         sectionAnchor.classList.add('active');
-    }
-    else {
+    } else {
         sectionAnchor.classList.remove('active');
     }
   }
-}
+};
 
 let modalMen = document.getElementById("menModal");
 let modalWomen = document.getElementById("womenModal");
@@ -56,6 +53,20 @@ window.onclick = (event) => {
   }
   if (event.target == modalMixed) {
     modalMixed.style.display = "none";
+  }
+  var i;
+  sections = ["anchor-home","anchor-events","anchor-medals","anchor-records","anchor-highlights","anchor-top"];
+  for (i = 0; i < sections.length; i++) {
+    var sectionAnchor = document.getElementById(sections[i]);
+    if (event.target == sectionAnchor) {
+      var section = document.getElementById(sections[i].substring(7,));
+      var boundingRect = section.getBoundingClientRect();
+      console.log(sections[i], boundingRect.y);
+      window.scroll({
+          top: boundingRect.y,
+          behavior: 'smooth' // does not work on Safari
+      });
+    }
   }
 }
 
