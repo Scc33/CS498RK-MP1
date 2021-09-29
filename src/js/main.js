@@ -1,4 +1,4 @@
-var slidePosition = 1;
+var slidePosition = 0;
 SlideShow(slidePosition);
 
 function plusSlides(n) {
@@ -8,13 +8,16 @@ function plusSlides(n) {
 function SlideShow(n,type) {
   var i;
   let slides = document.getElementsByClassName("container");
-  if (n > slides.length) {slidePosition = 1}
-  if (n < 1) {slidePosition = slides.length}
+  if (n >= slides.length) {
+    slidePosition = 0;
+  } else if (n < 0) {
+    slidePosition = slides.length-1;
+  }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
 
-  slides[slidePosition-1].style.display = "block";
+  slides[slidePosition].style.display = "block";
 }
 
 window.onscroll = () => {

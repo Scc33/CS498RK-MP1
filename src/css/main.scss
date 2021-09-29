@@ -115,7 +115,6 @@ html,body {
   margin-top: -23px;
   padding: 17px;
   color: grey;
-  font-weight: bold;
   font-size: $large-font;
   transition: $partial-transition ease;
   border-radius: 0 5px 5px 0;
@@ -188,18 +187,6 @@ html,body {
   background-color: #CD7F32;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: $full-page;
-  height: $full-page;
-  overflow: auto;
-  transition: $full-transition;
-}
-
 h1 {
   font-size: 52px;
 }
@@ -226,13 +213,24 @@ button:hover {
   color: white;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: $full-page;
+  height: $full-page;
+  overflow: auto;
+  transition: $full-transition;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
 .modal-content {
-  background-color: #fefefe;
+  background-color: #f1f1f1;
   text-align: center;
-  margin: 15% auto;
-  padding: 20px;
+  margin: 10% auto;
   border: 1px solid $bg-color;
-  width: 50%;
+  width: 48%;
   transition: $full-transition;
 }
 
@@ -244,13 +242,14 @@ button:hover {
 .close {
   color: #aaa;
   float: right;
+  padding-top: 12px;
+  padding-right: 18px;
   font-size: $large-font;
 }
 
 .close:hover,
 .close:focus {
   color: black;
-  text-decoration: none;
   cursor: pointer;
 }
 
